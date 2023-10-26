@@ -34,4 +34,5 @@ if response.status_code == 200:
     user_info = soup.find('div', id = "user_agent").text
     all_data["User-agent"] = user_info
 
-print(all_data)
+for element in all_data:
+    print(element)
