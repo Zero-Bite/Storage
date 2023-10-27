@@ -9,13 +9,16 @@ import bs4
 
 # введем замену user-agent
 user = fake_useragent.UserAgent().random
-headers = {"user-agent": user}
+headers = {"user-agent": user,
+           "Sec-Ch-Ua-Platform": "macOS"}
 
 link = "https://browser-info.ru/"
 response = requests.get(link, headers=headers)
 
 
 if response.status_code == 200:
+
+    print("<---Connection is ok--->")
 
     all_data = {}
 
