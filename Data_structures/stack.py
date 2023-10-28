@@ -1,6 +1,6 @@
 # задача на использование стека при решении задач со скобками
 
-def brackets_check(line):
+def check(line):
 
     stack = []
     ex_sequence = '(){}[]'
@@ -49,5 +49,5 @@ def brackets_check(line):
     else:
         return (first_commit_of_open + 1)
     
-
-print(brackets_check("{[()]}"))
+data = input()
+print(check(data))
