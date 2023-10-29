@@ -1,5 +1,6 @@
 import random
 
+# медленно, слишком медленно
 
 def bubble_sort(array):
 
