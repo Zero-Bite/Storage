@@ -46,3 +46,56 @@ class RedButton:
     def count(self):
         return self.__counter 
 
+class Programmer:
+
+    def __init__(self, name, post, hours=0):
+        self.__name = name
+        self.__post = post
+        self.__hours = hours
+        self.__tgr = 20 # only for Senoir
+
+    def work(self, hours):
+        self.__hours += hours
+
+    
+    def rise(self):
+        if self.__post == 'Junior':
+            self.__post = 'Middle'
+            self.__hours = 0
+
+        elif self.__post == 'Middle':
+            self.__post = 'Senior'
+            self.__hours = 0
+
+        else:
+            self.__tgr += 1
+
+
+    def info(self):
+        amount = 0
+
+        if self.__post == 'Junior':
+            amount = 10 * self.__hours
+        elif self.__post == 'Middle':
+            amount = 15 * self.__hours
+        else:
+            amount = self.__tgr * self.__hours
+
+        return self.__name, self.__hours, amount
+    
+
+    
+
+programmer = Programmer('Васильев Иван', 'Junior')
+programmer.work(750)
+print(programmer.info())
+programmer.rise()
+programmer.work(500)
+print(programmer.info())
+programmer.rise()
+programmer.work(250)
+print(programmer.info())
+programmer.rise()
+programmer.work(250)
+print(programmer.info())
+
