@@ -11,7 +11,7 @@ class JamesWebb:
         for index in range(len(self.data)):
             for element in range(len(self.data[index])):
                 if self.data[index][element] < 0 and abs(self.data[index][element]) > maxim_value:
-                    maxim_value = abs(element)
+                    maxim_value = abs(self.data[index][element])
                     coor = (index, element)
 
         return coor
@@ -55,12 +55,20 @@ class JamesWebb:
         return counter
 
 
-data = [[0, 0, 1, 2],
-        [3, 1, -1, -1],
-        [0, 3, -1, 0]]
+data = [[4, -3, 6, -8, -7, -2, -1],
+        [-5, 5, 4, 0, -8, 7, -6],
+        [-5, 5, 1, 1, -2, -7, -1],
+        [-6, 6, -1, -2, 3, 9, 1],
+        [4, 3, -9, -5, -7, 0, -1],
+        [0, 6, -9, -5, 0, -1, -5]]
+
+
 jw = JamesWebb(data)
-print(jw.brightest_star())
-print(jw.brightest_galaxy())
 print(jw.stars())
+print(jw.brightest_star())
 print(jw.galaxies())
-print(jw.voids())
+
+# 23
+# (4, 2)
+# (5, 6) - my response
+# 15
