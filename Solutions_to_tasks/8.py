@@ -23,14 +23,31 @@ class Rainbow:
         name_of_color = ["red", "orange", "yellow", "green", "light blue", "blue", "violet"]
 
         if self.type == 1:
-            for item in name_of_color.items():
-                if item[1] == name and name != 'violet':
+            # for item in name_of_color.items():
+            #     if item[1] == name and name != 'violet':
+            if name == 'violet':
+                return 'red'
+            else:
+                for index in range(len(name_of_color)):
+                    if name_of_color[index] == name:
+                        return name_of_color[index + 1]
 
         elif self.type == 2:
-            pass
+            if name == 'red':
+                return 'violet'
+            else:
+                for index in range(len(name_of_color) - 1, 0, -1):
+                    if name_of_color[index] == name:
+                        return name_of_color[index - 1]
         else:
             self.type = 3
+            if name == 'violet':
+                return 'red'
+            else:
+                for index in range(len(name_of_color)):
+                    if name_of_color[index] == name:
+                        return name_of_color[index + 1]
 
 
-tmp = Rainbow(1)
-tmp.next_color("blue")
+rb = Rainbow(2)
+print(rb.next_color('blue'))
