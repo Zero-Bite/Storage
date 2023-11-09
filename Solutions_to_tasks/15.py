@@ -9,7 +9,7 @@ class ChairLeg:
         else:
             self.length = (other * self.length)
 
-    def __rmul__(self, other):
+    def __rmul__(self, other):  
         if isinstance(other, ChairLeg):
             self.length = (self.length * other.length)
         else:
