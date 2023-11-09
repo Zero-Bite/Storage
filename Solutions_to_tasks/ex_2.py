@@ -15,8 +15,12 @@ class Magician:
             tmp_to_add = str(to_add)
             to_paste = str(number) + tmp_to_add
 
-        with open(self.name, 'a') as file:
-            file.write(to_paste)
+        # with open(self.name, '+') as file:
+        #     file.write(to_paste)
+
+        with open(self.name, 'r+') as f:
+            f.seek(0, 2)
+            f.write(to_paste)
 
     def get_all(self):
         names = set()
@@ -68,13 +72,15 @@ class Magician:
         res = sorted(set(res))
 
         return res
+
+
 #
-#
-# mgc = Magician('/Users/anastasia/Desktop/Pytuhon/Parse/step_by_step/parser/Solutions_to_tasks/things1.txt')
-# print('Magic things:', *mgc.get_all())
-# print('Things of min size:')
-# print(*mgc.min_size(), sep='\n')
-# print()
-# mgc.add_thing(('crown', 49, 213))
-# print('Magic crowns:')
-# print(*mgc.get_thing('crown'), sep='\n')
+
+mgc = Magician('/Users/anastasia/Desktop/Pytuhon/Parse/step_by_step/parser/Solutions_to_tasks/things1.txt')
+print('Magic things:', *mgc.get_all())
+print('Things of min size:')
+print(*mgc.min_size(), sep='\n')
+print()
+mgc.add_thing(('crown', 49, 213))
+print('Magic crowns:')
+print(*mgc.get_thing('crown'), sep='\n')
