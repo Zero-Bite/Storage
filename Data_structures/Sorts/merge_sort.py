@@ -30,7 +30,7 @@ def merge_sort(line_numbers):
 
     return merge(left_part, right_part)
 
-line = [100, -10, 0, 40, 2]
-print(line)
-print()
-print(merge_sort(line))
+# line = [100, -10, 0, 40, 2]
+# print(line)
+# print()
+# print(merge_sort(line))

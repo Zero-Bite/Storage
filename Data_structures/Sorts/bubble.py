@@ -1,5 +1,4 @@
 
-
 def bubble_sort(line_numbers):
     n = len(line_numbers)
     for i in range(n - 1):
@@ -8,4 +7,3 @@ def bubble_sort(line_numbers):
                 line_numbers[j], line_numbers[j + 1] = line_numbers[j + 1], line_numbers[j]
 
     return line_numbers
-
